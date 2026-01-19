@@ -1,0 +1,349 @@
+//Task-01
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_01{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Lowercase: ");
+    String s1=sc.nextLine();
+    String s2="";
+    for(int i=0; i<s1.length(); i++){
+      char a=s1.charAt(i);
+      
+      if((int)a>=97 && (int)a<=122){
+        a-=32;
+        s2+=a;
+      }
+      else{
+        s2+=a;
+      }
+    }
+    System.out.println("Uppercase: "+s2);
+  }
+}
+
+
+
+
+//Task-02
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_02{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a String: ");
+    String s1=sc.nextLine();
+    String s2="";
+    boolean flag=true;
+    for(int i=s1.length()-1; i>=0; i--){
+      char a=s1.charAt(i);
+      s2+=a;
+    }
+    System.out.println("Reversed String: "+s2);
+    if(s2.equals(s1)){
+      System.out.println(flag);
+    }
+    else{
+      System.out.println(!flag);
+    }
+  }
+}
+
+
+
+
+//Task-03
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_03{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a String: ");
+    String s1=sc.nextLine();
+    System.out.println("Enter the Spliting Character: ");
+    String s2=sc.nextLine();
+    char a=s2.charAt(0);
+    String s3="";
+    for(int i=0; i<s1.length(); i++){
+      char b=s1.charAt(i);
+      if(b!=a){
+        s3+=b;
+      }
+      else{
+        System.out.println(s3);
+        s3="";
+      }
+    }
+    System.out.println(s3);      //to print the last string stored in s3
+  }
+}
+
+
+
+
+//Task-04
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_04{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a Striing: ");
+    String x=sc.nextLine();
+    String y="";
+    for(int i=x.length()-1; i>=0; i--){
+      char a=x.charAt(i);
+      y+=a;
+    }
+    System.out.println("Reversed String:\n"+y);
+  }
+}
+
+
+
+
+
+//Task-05
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_05{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Phrase: ");
+    String s1=sc.nextLine();
+    int Vcount=0, Ccount=0;
+    for(int i=0; i<s1.length(); i++){
+      char a=s1.charAt(i);
+      int x=(int)a;
+      if(x==65 || x==69 || x==73 || x==79 || x==85 || x==97 || x==101 || x==105 || x==111 || x==117){
+        Vcount++;
+      }
+      else if((x>=65 && x<=90) || (x>=97 && x<=122)){         //to opt out the special characters;
+        Ccount++;                                            // if the char. is vowel it doesnt even come to this scoope;
+      }
+    }
+    if(Vcount>0 && Ccount>0){
+      if(Vcount%3==0 && Ccount%5==0){
+        System.out.println("Aaarr! Me Plunder!!");
+      }
+      else{
+        System.out.println("Blimey! No Plunder!!");
+      }
+    }
+    else{
+      System.out.println("Blimey! No Plunder!!");
+    }
+  }
+}
+
+
+
+
+
+
+//Task-06
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_06{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a String: ");
+    String s1=sc.nextLine();
+    String s2="";
+    String s3="";
+    for(int i=s1.length()-1; i>=0; i--){
+      char a=s1.charAt(i);
+      s2+=a;
+      int ascii=(int)a;
+      if(ascii==32){
+        s3="";
+        for(int j=s2.length()-1; j>=0; j--){
+          char b=s2.charAt(j);
+          s3+=b;
+        }
+        System.out.print(s3);
+        s2="";
+      }
+    }
+    s3="";
+    for(int k=s2.length()-1; k>=0; k--){          //This for loop for printing remaining portion in s3 without space; 
+      char c=s2.charAt(k);
+      s3+=c;
+    }
+    System.out.println(" "+s3);
+  }
+}
+
+
+
+
+
+//Task-07
+
+import java.util.Scanner;
+public class Lab_Ass_05_HW_07{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    String s1=sc.nextLine();
+    String s2=sc.nextLine();
+    String s3=s1+s2;
+    String empty="";
+    for(int i=0; i<s3.length(); i++){
+      char a=s3.charAt(i);
+      int ascii=(int)a;
+      boolean flag=true;
+      for(int j=0; j<s3.length();j++){
+        char b=s3.charAt(j);
+        if(b==a && i!=j){
+          flag=false;
+          break;
+        }
+        else{
+          flag=true;
+        }
+      }
+      if(flag){
+        empty+=(char)(ascii-32);
+      }
+    }
+    System.out.println(empty);
+  }
+}
+
+
+
+
+
+
+//Task-08
+
+import java.util.Scanner;
+public class Homework___8
+{
+  public static void main(String[] args)
+  {
+    Scanner input = new Scanner(System.in);
+    String phrase = input.nextLine();
+    int count = 1;
+    for(int i = 0; i < phrase.length(); i++)
+    {
+      char c = phrase.charAt(i);
+      if((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+      {
+        if(count % 2 != 0)
+        {
+          if(c >= 65 && c <= 90)
+          {
+            System.out.print((char)(c + 32));
+            count++;
+            continue;
+          }
+          else if(c >= 97 && c <= 122)
+          {
+            System.out.print(c);
+            count++;
+            continue;
+          }
+        }
+        if(count % 2 == 0)
+        {
+          if(c >= 65 && c <= 90)
+          {
+            System.out.print(c);
+            count++;
+            continue;
+          }
+          else if(c >= 97 && c <= 122)
+          {
+            System.out.print((char)(c - 32));
+            count++;
+            continue;
+          }
+        }
+      }
+      else
+      {
+        System.out.print(c);
+      }
+    }
+  }
+}
+
+
+
+
+
+//Task-09
+
+import java.util.Scanner;
+public class Homework___09
+{
+  public static void main(String[] args)
+  {
+    Scanner input = new Scanner(System.in);
+    String pass = input.nextLine();
+    boolean hasLower = false;
+    boolean hasUpper = false;
+    boolean hasNumber = false;
+    boolean hasSpecial = false;
+    if(pass.length() >= 8)
+    {
+      for(int i = 0; i < pass.length(); i++)
+      {
+        int ascii = (int)pass.charAt(i);
+        if(ascii >= 65 && ascii <= 90)
+        {
+          hasUpper = true;
+        }
+        else if(ascii >= 97 && ascii <= 122)
+        {
+          hasLower = true;
+        }
+        else if(ascii >= 30 && ascii <= 39)
+        {
+          hasNumber = true;
+        }
+        else
+        {
+          hasSpecial = true;
+        }
+      }
+    }
+    if(hasUpper && hasLower && hasNumber && hasSpecial)
+    {
+      System.out.print("True");
+    }
+    else
+    {
+      System.out.print("False");
+    }
+  }
+}      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+   
